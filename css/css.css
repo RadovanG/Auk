@@ -24,13 +24,13 @@ a {
     font-size: larger;
 }
 .proizvod {
-    background-color:#ffff00;
+    background-color:#00ff11;
     border: dashed;
     border-left: none;
 
 }
 .prob {
-    background-color:#ffff00;
+    background-color:#00ff11;
     margin-left: 20px;
     border: dashed;
     border-right: none;
