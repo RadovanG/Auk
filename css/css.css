@@ -12,3 +12,22 @@ ul.subcategory {
     padding: 0;
     padding-left: 20px;
 }
+.custom-select{
+    width: auto;
+}
+
+.proizvod p{
+    text-align: left;
+    font-size: larger;
+}
+a {
+    font-size: larger;
+}
+.proizvod {
+    background-color:#ffff00;
+
+}
+.prob {
+    background-color:#ffff00;
+    margin-left: 20px;
+}
