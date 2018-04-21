@@ -28,8 +28,36 @@ $articleCostBuy = mysqli_real_escape_string($connection,$articleCostBuy);
 $articleDonation = stripslashes($_REQUEST['articleDonation']);
 $articleDonation = mysqli_real_escape_string($connection,$articleDonation);
 
-  $query="INSERT into `articles` (articleName`, `articleUserDes`, `subCatID`, `articleState`, `articleCostBuyNow`, `firstBidPrice`, `articleDonation`) 
-VALUES ('$articleName', '$articleUserDes', $subcategory, '$articleState', $articleCostBuy, $firstBidPrice, $articleDonation)";
+    function GetImageExtension($imagetype)
+    {
+        if(empty($imagetype)) return false;
+
+        switch($imagetype)
+
+        {
+
+            case 'image/bmp': return '.bmp';
+            case 'image/gif': return '.gif';
+            case 'image/jpeg': return '.jpg';
+            case 'image/png': return '.png';
+            default: return false;
+        }
+    }
+
+
+    if (!empty($_FILES["uploadedimage"]["name"])) {
+
+        $file_name=$_FILES["uploadedimage"]["name"];
+        $temp_name=$_FILES["uploadedimage"]["tmp_name"];
+        $imgtype=$_FILES["uploadedimage"]["type"];
+        $ext= GetImageExtension($imgtype);
+        $imagename=date("d-m-Y")."-".time().$ext;
+        $target_path = "images/user/".$imagename;
+
+    }
+
+  $query="INSERT into `articles` (`articleName`, `articleUserDes`, `subCatID`, `articleState`, `articleCostBuyNow`, `firstBidPrice`, `articleDonation`, `articlePhoto`) 
+VALUES ('$articleName', '$articleUserDes', $subcategory, '$articleState', $articleCostBuy, $firstBidPrice, $articleDonation, '$target_path')";
 
     $result = mysqli_query($connection,$query);
 
@@ -39,7 +67,9 @@ VALUES ('$articleName', '$articleUserDes', $subcategory, '$articleState', $artic
         <h3>Uspešno ste dodali predmet! Blavo!</h3>
         </div>";
     }else{
-    echo "Greska!!";}
+
+        echo mysqli_error();
+        echo "Greska!!";}
 
 }
 ?>
