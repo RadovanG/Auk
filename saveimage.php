@@ -79,6 +79,5 @@ VALUES ('$articleName', '$articleUserDes', $subcategory, '$articleState', $artic
     }
 }
 
-var_dump($_REQUEST);
-var_dump($date)
+
 ?>

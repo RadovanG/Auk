@@ -1,4 +1,4 @@
-<?php include('db_config.php');include('html.php'); ?>
+<?php include('db_config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +25,7 @@
 
 
 Category:
-<select class="custom-select" name="categoryname" onchange="showUser(this.value)">
+<select name="categoryname" onchange="showUser(this.value)">
     <option value="none">None</option>
     <?php
     $sql = "SELECT * FROM category";
