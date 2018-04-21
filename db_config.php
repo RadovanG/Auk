@@ -1,7 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: radov
- * Date: 4/21/2018
- * Time: 12:20 PM
- */
+DEFINE("HOST",'localhost');
+DEFINE("USER",'root');
+DEFINE("PASS",'');
+DEFINE("DB",'bizkodaukcije');
+
+$connection=mysqli_connect(HOST,USER,PASS,DB)
+or die(mysqli_errno($connection));
+?>
