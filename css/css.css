@@ -1,3 +1,7 @@
+body{
+    background-color:#bae1ff;
+}
+
 #navigation {
     font-size:0.75em;
     width:150px;
@@ -6,8 +10,8 @@
 #navigation ul {margin:0px; padding:0px;}
 #navigation li {list-style: none;}
 
-ul.top-level {background:#fff;}
-ul.top-level li {
+ul.top-level {background:#40E0D0;}
+ul.top-level li {background:#ffc002;
     margin: 0 0 3px 0;
     border: solid 1px #cccccc;
     -webkit-border-radius: 5px;
