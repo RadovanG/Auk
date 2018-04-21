@@ -1,7 +1,6 @@
 <?php
 include ('db_config.php');
 
-$password=sha1(mysqli_real_escape_string($connection,$_POST['password']));
 $email=mysqli_real_escape_string($connection,$_POST['email']);
 $firstName=mysqli_real_escape_string($connection,$_POST['firstName']);
 $lastName=mysqli_real_escape_string($connection,$_POST['lastName']);
@@ -17,11 +16,7 @@ $json = array("errorReg" => array(), "successReg" => "");
 
 // Check to see if its emtpy
 
-if (!empty($password)) {
-    $password=sha1(mysqli_real_escape_string($connection,$_POST['password']));
-} else {
-    array_push($json['errorReg'], "Password must not be empty");
-}
+
 
 
 if (!empty($email)) {
@@ -64,8 +59,8 @@ if (!empty($lastName)) {
 
 
 
-if (isset($email) and isset($password) and isset($address) and isset($phone) and isset($city) and isset($firstName) and isset($lastName)) {
-        $sql="UPDATE users SET password='$password',email='$email',address='$address',phone='$phone',city='$city',firstName='$firstName',lastName='$lastName' WHERE userID=$id";
+if (isset($email)  and isset($address) and isset($phone) and isset($city) and isset($firstName) and isset($lastName)) {
+        $sql="UPDATE users SET email='$email',address='$address',phone='$phone',city='$city',firstName='$firstName',lastName='$lastName' WHERE userID=$id";
         $query=mysqli_query($connection,$sql);
         if ($query) {
             $json["successReg"]="Successfull update!";

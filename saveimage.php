@@ -1,45 +1,83 @@
 <?php
 include("db_config.php");
 
+?>
+<?php
+if (isset($_REQUEST['articleName']) ){
 
-function GetImageExtension($imagetype)
-{
-    if(empty($imagetype)) return false;
+var_dump($_REQUEST);
 
-    switch($imagetype)
+$articleName = stripslashes($_REQUEST['articleName']);
+$articleName = mysqli_real_escape_string($connection,$articleName);
 
+$articleUserDes = stripslashes($_REQUEST['articleUserDes']);
+$articleUserDes = mysqli_real_escape_string($connection,$articleUserDes);
+
+$articleState = stripslashes($_REQUEST['articleState']);
+$articleState = mysqli_real_escape_string($connection,$articleState);
+
+$subcategory = stripslashes($_REQUEST['subcategory']);
+$subcategory = mysqli_real_escape_string($connection,$subcategory);
+
+$firstBidPrice = stripslashes($_REQUEST['firstBidPrice']);
+$firstBidPrice = mysqli_real_escape_string($connection,$firstBidPrice);
+
+$articleCostBuy = stripslashes($_REQUEST['articleCostBuy']);
+$articleCostBuy = mysqli_real_escape_string($connection,$articleCostBuy);
+
+$articleDonation = stripslashes($_REQUEST['articleDonation']);
+$articleDonation = mysqli_real_escape_string($connection,$articleDonation);
+
+    function GetImageExtension($imagetype)
     {
+        if(empty($imagetype)) return false;
 
-        case 'image/bmp': return '.bmp';
-        case 'image/gif': return '.gif';
-        case 'image/jpeg': return '.jpg';
-        case 'image/png': return '.png';
-        default: return false;
+        switch($imagetype)
+
+        {
+
+            case 'image/bmp': return '.bmp';
+            case 'image/gif': return '.gif';
+            case 'image/jpeg': return '.jpg';
+            case 'image/png': return '.png';
+            default: return false;
+        }
     }
-}
 
 
-if (!empty($_FILES["uploadedimage"]["name"])) {
+    if (!empty($_FILES["uploadedimage"]["name"])) {
 
-    $file_name=$_FILES["uploadedimage"]["name"];
-    $temp_name=$_FILES["uploadedimage"]["tmp_name"];
-    $imgtype=$_FILES["uploadedimage"]["type"];
-    $ext= GetImageExtension($imgtype);
-    $imagename=date("d-m-Y")."-".time().$ext;
-    $target_path = "images/user/".$imagename;
+        $file_name=$_FILES["uploadedimage"]["name"];
+        $temp_name=$_FILES["uploadedimage"]["tmp_name"];
+        $imgtype=$_FILES["uploadedimage"]["type"];
+        $ext= GetImageExtension($imgtype);
+        $imagename=date("d-m-Y")."-".time().$ext;
+        $target_path = "images/user/".$imagename;
 
-    $query="UPDATE users SET userPhoto='$target_path' WHERE userID=1";
+    }
+    if (move_uploaded_file($_FILES["uploadedimage"]["tmp_name"], $target_path)) {
+        echo "The file ". basename( $_FILES["uploadedimage"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
 
-    echo $target_path;
+  $query="INSERT into `articles` (`articleName`, `articleUserDes`, `subCatID`, `articleState`, `articleCostBuyNow`, `firstBidPrice`, `articleDonation`, `articlePhoto`) 
+VALUES ('$articleName', '$articleUserDes', $subcategory, '$articleState', $articleCostBuy, $firstBidPrice, $articleDonation, '$target_path')";
 
     $result = mysqli_query($connection,$query);
-    //ispis ako je uspesno updateovanje filma u bazu podataka
-    if($result){
+
+    //ispis ako je uspešno dodavanje filma u bazu podataka
+    if($result) {
         echo "<div class='form'>
-        <h3>Uspešno ste uredili film! <a href='../index.php'>Povratak na glavnu stranicu.</a></h3>
-        <br/> <a href='dodajfilm.php'>Kliknite ovde da dodate/menjate još filmova.</a>";
-    }
+        <h3>Uspešno ste dodali predmet! Blavo!</h3>
+        </div>";
+    }else{
+
+        echo mysqli_error();
+        echo "Greska!!";}
+
+<<<<<<< HEAD
+=======
 }
-
-
+>>>>>>> f456f2d6aaedac604bc43be6961dad2d4acbbd3c
 ?>

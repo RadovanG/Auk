@@ -1,7 +1,6 @@
 <?php session_start()?>
 <html>
 <head>
-    <title></title>
     <title>AH</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/login_css.css" rel="stylesheet" type="text/css">

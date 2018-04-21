@@ -23,29 +23,11 @@ echo'<div class="container">
             <h5>Edit you profile</h5>
             <form id="forma">
 
-                <div class="form-group">
-                    <label for="password" class="cols-sm-2 control-label">Password</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
-                        </div>
-                    </div>
-                </div>
-                <span id="errorPassword" hidden="hidden" style="color:red">Password must not be empty!</span>
-                <div class="form-group">
-                    <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-                        </div>
-                    </div>
-                </div>
-
  <div class="form-group">
                     <label for="firstName" class="cols-sm-2 control-label">First Name</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="firstName" id="firstName"  placeholder="Enter your First Name"/>
+                            <input type="text" class="form-control" name="firstName" id="firstName" value="'.$row['firstName'].'"  placeholder="Enter your First Name"/>
                         </div>
                     </div>
                 </div>
@@ -55,7 +37,7 @@ echo'<div class="container">
                     <label for="lastName" class="cols-sm-2 control-label">Last Name</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="lastName" id="lastName"  placeholder="Enter your Last name"/>
+                            <input type="text" class="form-control" name="lastName" id="lastName"  value="'.$row['lastName'].'" placeholder="Enter your Last name"/>
                         </div>
                     </div>
                 </div>

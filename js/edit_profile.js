@@ -6,8 +6,6 @@ $(document).ready(function () {
     $('#forma').submit(function (e) {
         e.preventDefault();
 
-        var errorPassword=true;
-        var errorRepeatPassword=true;
         var errorEmail=true;
         var errorAddress=true;
         var errorPhone=true;
@@ -15,8 +13,6 @@ $(document).ready(function () {
         var errorFirstName=true;
         var errorLastName=true;
 
-        var password=$('#password').val().trim();
-        var repeatPassword=$("#confirm").val().trim();
         var email = $('#email').val().trim();
         var address=$('#address').val().trim();
         var phone=$('#phone').val().trim();
@@ -54,31 +50,7 @@ $(document).ready(function () {
         }
 
 
-        if (password == "") {
-            $('#errorPassword').css("display", "block");
-            errorPassword = true;
-        }
-        else {
-            $("#errorPassword").css("display", "none");
-            errorPassword = false;
-        }
 
-        if (repeatPassword == "" || password!=repeatPassword) {
-            $('#errorPassword').css("display", "block");
-            errorPassword= true;
-        }
-        else {
-            $("#errorPassword").css("display", "none");
-            errorPassword = false;
-        }
-        if (repeatPassword == "" || password!=repeatPassword) {
-            $('#errorPassword').css("display", "block");
-            errorPassword= true;
-        }
-        else {
-            $("#errorPassword").css("display", "none");
-            errorPassword = false;
-        }
 
 
         if (address == "") {
@@ -124,14 +96,14 @@ $(document).ready(function () {
             $("#errorLastName").css("display", "none");
             errorLastName = false;
         }
-        if (!errorEmail && !errorPassword && !errorPhone &&!errorCity && !errorLastName && !errorFirstName) {
+        if (!errorEmail  && !errorPhone &&!errorCity && !errorLastName && !errorFirstName) {
 
 
             $.ajax({
                 type: "POST",
                 url: "edit_profile-db.php",
                 cache: false,
-                data:  { id:id, password : password,email: email ,address : address,phone : phone,city : city,firstName:firstName, lastName:lastName },
+                data:  { id:id, email: email ,address : address,phone : phone,city : city,firstName:firstName, lastName:lastName },
                 success: successFnc,
                 error: errorFnc,
                 dataType: "json"
