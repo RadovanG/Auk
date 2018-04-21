@@ -107,7 +107,7 @@
                         </div>
                     </div>
                 </div>
-                <span id="errorPhone" hidden="hidden" style="color:red">Phone must not be empty!</span>
+                <span id="errorPhone" hidden="hidden" style="color:red">Phone must not be empty and must be only numbers!</span>
 
                 <div class="form-group">
                     <label for="email" class="cols-sm-2 control-label">Your Email</label>

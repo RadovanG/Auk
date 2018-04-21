@@ -73,11 +73,6 @@ if (!empty($email)) {
     array_push($json['errorReg'], "Email must not be empty");
 }
 
-if (!empty($userBirthday)) {
-    $userBirthday=mysqli_real_escape_string($connection,$_POST['userBirthday']);
-} else {
-    array_push($json['errorReg'], "Birthday must not be empty");
-}
 
 
 if (isset($firstName) and isset($lastName) and isset($username) and isset($password) and isset($address) and isset($city) and isset($phone) and isset($email) and isset($userBirthday)) {
