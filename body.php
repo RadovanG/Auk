@@ -32,7 +32,7 @@ include('db_config.php');
         <div class="col-md-10">
             <div class="row">
                 <div class="col-2 prob ">
-                    <img src="images/photo.png" class="rounded float-left" width="100%"  alt="opis slike">
+                    <img src="images/photo.png" class="rounded float-left" width="129-"  alt="opis slike">
                 </div>
                 <div class="col-3 proizvod">
                     <a href="link_od_proizvoda"> Proizvod </a>
@@ -55,7 +55,7 @@ include('db_config.php');
                     <br/>
 
                     <p class="text-muted"> Cena: </p>
-                    <p style="" </p>
+
                 </div>
         </div>
     </div>
