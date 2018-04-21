@@ -55,6 +55,11 @@ $articleDonation = mysqli_real_escape_string($connection,$articleDonation);
         $target_path = "images/user/".$imagename;
 
     }
+    if (move_uploaded_file($_FILES["uploadedimage"]["tmp_name"], $target_path)) {
+        echo "The file ". basename( $_FILES["uploadedimage"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
 
   $query="INSERT into `articles` (`articleName`, `articleUserDes`, `subCatID`, `articleState`, `articleCostBuyNow`, `firstBidPrice`, `articleDonation`, `articlePhoto`) 
 VALUES ('$articleName', '$articleUserDes', $subcategory, '$articleState', $articleCostBuy, $firstBidPrice, $articleDonation, '$target_path')";
