@@ -55,7 +55,7 @@ include_once('db_config.php');
         If yes<br/>
         Donate to ...
     </div>
-    <input name="Upload" type="submit" value="Upload Image">
+    <input name="Send your product!" type="submit" value="Send">
 </form>
 
 ?>

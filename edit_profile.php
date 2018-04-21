@@ -88,6 +88,14 @@ echo'<div class="container">
                 </div>
 
             </form>
+            
+            <div class="profilepicchange">
+            <h2>Change your Profile Picture</h2>
+<form name="addpicture" method="post" enctype="multipart/form-data" action="addprofilephoto.php">
+            <input name="uploadedimage" type="file"/>
+            <input name="Change your profile photo!" type="submit" value="Send">
+</form>
+</div>
         </div>
     </div>
 </div>

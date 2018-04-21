@@ -76,8 +76,5 @@ VALUES ('$articleName', '$articleUserDes', $subcategory, '$articleState', $artic
         echo mysqli_error();
         echo "Greska!!";}
 
-<<<<<<< HEAD
-=======
 }
->>>>>>> f456f2d6aaedac604bc43be6961dad2d4acbbd3c
 ?>
