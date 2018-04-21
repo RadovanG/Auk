@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+include_once('db_config.php');
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,7 +38,7 @@
     <select name="category">
             <?php
             $test = "SELECT categoryID, categoryName FROM category ORDER BY categoryName ASC ";
-            $result = $con->query($test);
+            $result = $connection->query($test);
 
             while ($row = mysqli_fetch_array($result))
             {
@@ -48,7 +51,7 @@
         <option value="select">select</option>
         <?php
         $test = "SELECT subcategoryID, subcategoryName FROM subcategory ORDER BY subcategoryName ASC ";
-        $result = $con->query($test);
+        $result = $connection->query($test);
 
         while ($row = mysqli_fetch_array($result))
         {
@@ -96,14 +99,18 @@ $firstBidPrice = mysqli_real_escape_string($connection,$firstBidPrice);
 $articleCostBuy = stripslashes($_REQUEST['articleCostBuy']);
 $articleCostBuy = mysqli_real_escape_string($connection,$articleCostBuy);
 
-$Donation = stripslashes($_REQUEST['F3d']);
-$f3d = mysqli_real_escape_string($connection,$f3d);
+$articleDonation = stripslashes($_REQUEST['articleDonation']);
+$articleDonation = mysqli_real_escape_string($connection,$articleDonation);
 
-$fimage = stripslashes($_REQUEST['FImage']);
-$fimage = mysqli_real_escape_string($connection,$fimage);
+$category = stripslashes($_REQUEST['category']);
+$category = mysqli_real_escape_string($connection,$category);
+
+$subcategory = stripslashes($_REQUEST['subcategory']);
+$subcategory = mysqli_real_escape_string($connection,$subcategory);
+
 
 //pristup bazi podataka
-$query = "INSERT into `films` (FName, FDescription, FActors, FGenre, FYear, F3D, FImage )
+$query = "INSERT into `articles` (FName, FDescription, FActors, FGenre, FYear, F3D, FImage )
 VALUES ('$fname', '$fdescription', '$factors', '$fgenre', '$fyear', '$f3d', '$fimage')";
 
     $result = mysqli_query($con,$query);
