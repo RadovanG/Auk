@@ -30,6 +30,32 @@ include('db_config.php');
             </div>
         </div>
         <div class="col-md-10">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/photo.png" class="rounded float-left" width="100%"  alt="opis slike">
+                </div>
+                <div class="col-3">
+                    <a href="link_od_proizvoda"> Proizvod </a>
+                    <p class="text-muted"> Opis........</p>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <p class="text-muted"> Cena: </p>
+                    <p style="" </p>
+                </div>
+
+                <div class="col-2">
+                    <img src="images/photo.png" class="rounded float-left" width="100%"  alt="opis slike">
+                </div>
+                <div class="col-3">
+                    <a href="link_od_proizvoda"> Proizvod </a>
+                    <p class="text-muted"> Opis........</p>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <p class="text-muted"> Cena: </p>
+                    <p style="" </p>
+                </div>
         </div>
     </div>
 </div>
