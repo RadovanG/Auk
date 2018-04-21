@@ -75,16 +75,17 @@ if (!empty($email)) {
 
 
 
-if (isset($firstName) and isset($lastName) and isset($username) and isset($password) and isset($address) and isset($city) and isset($phone) and isset($email) and isset($userBirthday)) {
+if (isset($firstName) and isset($lastName) and isset($username) and isset($password) and isset($address) and isset($city) and isset($phone) and isset($email)) {
 
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
         $sql = 'SELECT username,email FROM users WHERE email="' . $email . '" AND username="' . $username . '"';
+
         $query = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
         if (mysqli_num_rows($query) == 0) {
-            $sql = 'INSERT INTO users (firstName,lastName,username,password,address,city,phone,email,userPhoto,userBirthday) VALUES ("' . $firstName . '","' . $lastName . '","' . $username . '","' . $password . '","' . $address . '","' . $city . '","' . $phone . '","' . $email . '","' ."images\genericProfileIcon.jpg" . '","' . $userBirthday . '")';
+            $sql = 'INSERT INTO users (firstName,lastName,username,password,address,city,phone,email,userBirthday) VALUES ("' . $firstName . '","' . $lastName . '","' . $username . '","' . $password . '","' . $address . '","' . $city . '","' . $phone . '","' . $email . '","' . $userBirthday . '")';
             $query = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
             if ($query) {
