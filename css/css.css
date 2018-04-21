@@ -25,9 +25,11 @@ a {
 }
 .proizvod {
     background-color:#ffff00;
+    border: dashed;
 
 }
 .prob {
     background-color:#ffff00;
     margin-left: 20px;
+    border: dashed;
 }
