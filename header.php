@@ -1,16 +1,6 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Auction House</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-</head>
-<body>
+<?php
+include('html.php');
+?>
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <a class="navbar-brand" href="#">Your Auction House</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,5 +25,43 @@
         </form>
     </div>
 </nav>
+
+<div class="container-fluid">
+    <div id="navigation">
+        <ul class="top-level">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+                <a href="#">Portfolio</a>
+                <ul class="sub-level">
+                    <li><a href="#">Logo Design</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Services</a>
+                <ul class="sub-level">
+                    <li><a href="#">Web Development</a>
+                    </li>
+                    <li><a href="#">Logo Design</a></li>
+                    <li>
+                        <a href="#">Web Hosting</a>
+                        <ul class="sub-level">
+                            <li><a href="#">Linux</a></li>
+                            <li><a href="#">Windows</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+    </div>
+
+
+
+</div>
+
 </body>
 </html>
