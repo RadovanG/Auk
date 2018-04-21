@@ -1,37 +1,49 @@
-<?php
-include('html.php');
-include('db_config.php');
+<?php include('html.php');
 ?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
-            <?php
-                        $sql = "SELECT * FROM category";
-                        $result = $connection->query($sql);
-            ?>
-            <div id="category">
-                    <ul class="category">
-                        <?php
-                        while ($row = mysqli_fetch_array($result))
-                        {
-                            echo "<li><a href='".$row['categoryID']."'>".$row['categoryName']."</a></li>";
 
-                            $sql1="SELECT * FROM subcategory WHERE categoryID = '".$row['categoryID']."'";
-                            $result1 = $connection->query($sql1);
-                            echo "<ul class='subcategory'>";
-                            while ($row = mysqli_fetch_array($result1))
-                            {
-                                echo "<li><a href='".$row['subcategoryID']."'>".$row['subcategoryName']."</a></li>";
-                            }
-                            echo "</ul></li>";
-                        }
-                        ?>
+            <div id="navigation">
+                    <ul class="top-level">
+                        <li><a href="#">Item1</a></li>
+                        <li><a href="#">Item2</a></li>
+                        <li><a href="#">Item3</a></li>
+                        <li>
+                            <a href="#">Item4</a>
+                            <ul class="sub-level">
+                                <li><a href="#">Item4a</a></li>
+                                <li><a href="#">Item4b</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Item5</a>
+                            <ul class="sub-level">
+                                <li><a href="#">Item5a</a>
+                                </li>
+                                <li><a href="#">Item5b</a></li>
+                                <li>
+                                    <a href="#">Item5c</a>
+                                    <ul class="sub-level">
+                                        <li><a href="#">Wut</a></li>
+                                        <li><a href="#">Wut2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Feedback</a></li>
                     </ul>
                 </div>
+
         </div>
-        <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-10">
+                        <h1> Gde je ovaj </h1>
+
+            </div>
+
         </div>
-    </div>
-</div>
+
 
 
