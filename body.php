@@ -30,9 +30,6 @@ include('db_config.php');
                 </div>
         </div>
         <div class="col-md-10">
-                        <?php
-                        include ('simple_view.php');
-                        ?>
         </div>
     </div>
 </div>
