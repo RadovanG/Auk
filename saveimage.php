@@ -42,4 +42,4 @@ if (!empty($_FILES["uploadedimage"]["name"])) {
 }
 
 
-?>;
+?>
