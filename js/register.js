@@ -13,32 +13,7 @@ $(document).ready(function () {
     var errorEmail=true;
 
 
-    $("#firstName").keyup(function () {
 
-        var firstName=$("#firstName").val().trim();
-        if (firstName == "") {
-            $('#errorFirstName').css("display", "block");
-            errorFirstName = true;
-        }
-        else {
-            $("#errorFirstName").css("display", "none");
-            errorFirstName = false;
-        }
-
-    });
-    $("#lastName").keyup(function () {
-
-        var lastName=$("#lastName").val().trim();
-        if (lastName == "") {
-            $('#errorLastName').css("display", "block");
-            errorLastName = true;
-        }
-        else {
-            $("#errorLastName").css("display", "none");
-            errorLastName = false;
-        }
-
-    });
 
     $("#username").keyup(function () {
         var username=$("#username").val().trim();
@@ -62,6 +37,32 @@ $(document).ready(function () {
         else {
             $("#errorPassword").css("display", "none");
             errorPassword = false;
+        }
+
+    });
+
+    $("#firstName").keyup(function () {
+        var firstName=$("#firstName").val().trim();
+        if (firstName == "") {
+            $('#errorFirstName').css("display", "block");
+            errorFirstName = true;
+        }
+        else {
+            $("#errorFirstName").css("display", "none");
+            errorFirstName = false;
+        }
+
+    });
+
+    $("#lastName").keyup(function () {
+        var lastName=$("#lastName").val().trim();
+        if (lastName == "") {
+            $('#errorLastName').css("display", "block");
+            errorLastName = true;
+        }
+        else {
+            $("#errorLastName").css("display", "none");
+            errorLastName = false;
         }
 
     });
@@ -158,10 +159,10 @@ $(document).ready(function () {
             $('#errorCity').css("display", "block");
         }
         if (errorFirstName) {
-            $('#errorCountry').css("display", "block");
+            $('#errorFirstName').css("display", "block");
         }
         if (errorLastName) {
-            $('#errorCountry').css("display", "block");
+            $('#errorLastName').css("display", "block");
         }
 
 
@@ -169,7 +170,7 @@ $(document).ready(function () {
         if (!errorEmail && !errorUsername && !errorPassword && !errorPhone &&!errorCity && !errorLastName && !errorFirstName) {
             var username = $('#username').val().trim();
             var password=$('#password').val().trim();
-            var email = $('#email').val().trim();;
+            var email = $('#email').val().trim();
             var address=$('#address').val().trim();
             var phone=$('#phone').val().trim();
             var city=$('#city').val().trim();
