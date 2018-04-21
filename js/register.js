@@ -176,13 +176,14 @@ $(document).ready(function () {
             var city=$('#city').val().trim();
             var lastName=$('#lastName').val().trim();
             var firstName=$('#firstName').val().trim();
+            var userBirthday=$('#userBirthday').val().trim();
 
 
             $.ajax({
                 type: "POST",
                 url: "register-db.php",
                 cache: false,
-                data:  { username : username, password : password,email: email ,address : address,phone : phone,city : city,lastName : lastName,firstName : firstName  },
+                data:  { username : username,userBirthday:userBirthday, password : password,email: email ,address : address,phone : phone,city : city,lastName : lastName,firstName : firstName  },
                 success: successFnc,
                 error: errorFnc,
                 dataType: "json"
