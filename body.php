@@ -36,7 +36,7 @@ include('db_config.php');
                 </div>
                 <div class="col-3 proizvod">
                     <a href="link_od_proizvoda"> Proizvod </a>
-                    <p class="text-muted"> Opis........</p>
+                    <p class="text-muted"> Opis.........</p>
                     <br/>
                     <br/>
 
