@@ -1,0 +1,16 @@
+#list_items
+{
+    width: 98%;
+
+}
+
+html,body
+{
+    background-color:#264d73;
+    color:#fff;
+}
+
+#submit
+{
+    width:15em;
+}

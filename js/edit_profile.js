@@ -6,14 +6,14 @@ $(document).ready(function () {
     $('#forma').submit(function (e) {
         e.preventDefault();
 
-        var errorUsername=true;
         var errorPassword=true;
         var errorRepeatPassword=true;
         var errorEmail=true;
         var errorAddress=true;
         var errorPhone=true;
         var errorCity=true;
-        var errorCountry=true;
+        var errorFirstName=true;
+        var errorLastName=true;
 
         var password=$('#password').val().trim();
         var repeatPassword=$("#confirm").val().trim();
@@ -21,8 +21,26 @@ $(document).ready(function () {
         var address=$('#address').val().trim();
         var phone=$('#phone').val().trim();
         var city=$('#city').val().trim();
-        var country=$('#country').val().trim();
-        var id=$("#id_user").val().trim();
+        var id=$("#userID").val().trim();
+        var lastName=$('#lastName').val().trim();
+        var firstName=$('#firstName').val().trim();
+        if (lastName == "") {
+            $('#errorLastName').css("display", "block");
+            errorLastName = true;
+        }
+        else {
+            $("#errorLastName").css("display", "none");
+            errorLastName = false;
+        }
+
+        if (firstName == "") {
+            $('#errorFirstName').css("display", "block");
+            errorFirstName = true;
+        }
+        else {
+            $("#errorFirstName").css("display", "none");
+            errorFirstName = false;
+        }
 
         if(!emailReg.test(email) || email == "")
         {
@@ -90,23 +108,30 @@ $(document).ready(function () {
             errorCity = false;
         }
 
-        if (country == "") {
-            $('#errorCountry').css("display", "block");
-            errorCountry = true;
+        if (firstName == "") {
+            $('#errorFirstName').css("display", "block");
+            errorFirstName = true;
         }
         else {
-            $("#errorCountry").css("display", "none");
-            errorCountry = false;
+            $("#errorFirstName").css("display", "none");
+            errorFirstName = false;
         }
-
-        if (!errorEmail && !errorPassword && !errorPhone &&!errorCity && !errorCountry) {
+        if (lastName == "") {
+            $('#errorLastName').css("display", "block");
+            errorLastName = true;
+        }
+        else {
+            $("#errorLastName").css("display", "none");
+            errorLastName = false;
+        }
+        if (!errorEmail && !errorPassword && !errorPhone &&!errorCity && !errorLastName && !errorFirstName) {
 
 
             $.ajax({
                 type: "POST",
                 url: "edit_profile-db.php",
                 cache: false,
-                data:  { id:id, password : password,email: email ,address : address,phone : phone,city : city,country:country },
+                data:  { id:id, password : password,email: email ,address : address,phone : phone,city : city,firstName:firstName, lastName:lastName },
                 success: successFnc,
                 error: errorFnc,
                 dataType: "json"

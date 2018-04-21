@@ -1,0 +1,92 @@
+.container {
+    padding: 0%;
+    margin: auto;
+    /*margin-left: 40px;*/
+}
+
+.image-bg-fluid-height {
+    background-image: url("../images/guitar2.jpg");
+
+}
+
+body, html {
+    background-color:#264d73;
+    color:#fff;
+}
+
+.collapse {
+    background-color: #07559a;
+}
+
+.section-heading {
+    text-align: center;
+    margin-left: 5%;
+}
+
+.section-lead {
+    text-align: center;
+    margin-left: 5%;
+}
+
+#myCarousel {
+    margin-left: 15%;
+    margin-right: 10%;
+}
+
+#myCarousel1 {
+    margin-left: 15%;
+    margin-right: 10%;
+}
+#car {
+    margin-left: 5%;
+
+}
+
+.section-paragraph {
+    padding: 0%;
+    text-align: center;
+
+}
+
+#players {
+    text-align: center;
+    margin-left: 30%;
+}
+
+.section-heading-1 {
+    margin-left: 30%;
+}
+.carousel-inner
+{
+    height: 400px;
+}
+.glyphicon-check
+{
+    font-size: 30pt;
+}
+
+.glyphicon-paperclip
+{
+    font-size: 30pt;
+}
+
+
+.glyphicon-pushpin
+{
+    font-size: 30pt;
+}
+
+
+.glyphicon-lock
+{
+    font-size: 30pt;
+}
+.glyphicon-shopping-cart
+{
+    font-size: 30pt;
+
+}
+.text-justify {
+    text-align: justify;
+}
+

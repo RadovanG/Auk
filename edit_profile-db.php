@@ -3,21 +3,14 @@ include ('db_config.php');
 
 $password=sha1(mysqli_real_escape_string($connection,$_POST['password']));
 $email=mysqli_real_escape_string($connection,$_POST['email']);
+$firstName=mysqli_real_escape_string($connection,$_POST['firstName']);
+$lastName=mysqli_real_escape_string($connection,$_POST['lastName']);
 $address=mysqli_real_escape_string($connection,$_POST['address']);
 $phone=mysqli_real_escape_string($connection,$_POST['phone']);
 $city=mysqli_real_escape_string($connection,$_POST['city']);
-$country=mysqli_real_escape_string($connection,$_POST['country']);
 $id=mysqli_real_escape_string($connection,$_POST['id']);
 
-//var_dump($id,$password,$email,$address,$phone,$city,$country);
 
-//echo 'user '.$username.'<br/>';
-//echo 'pass '.$password.'<br/>';;
-//echo 'email '.$email.'<br/>';
-//echo 'address '.$address.'<br/>';
-//echo 'phone '.$phone.'<br/>';
-//echo 'city '.$city.'<br/>';
-//echo 'country '.$country.'<br/>';
 
 //Inicialitaion of  Array
 $json = array("errorReg" => array(), "successReg" => "");
@@ -54,8 +47,15 @@ if (!empty($city)) {
     array_push($json['errorReg'], "City must not be empty");
 }
 
-if (!empty($country)) {
-    $country=mysqli_real_escape_string($connection,$_POST['country']);
+if (!empty($firstName)) {
+    $firstName=mysqli_real_escape_string($connection,$_POST['firstName']);
+
+} else {
+    array_push($json['errorReg'], "Country must not be empty");
+}
+
+if (!empty($lastName)) {
+    $lastName=mysqli_real_escape_string($connection,$_POST['lastName']);
 
 } else {
     array_push($json['errorReg'], "Country must not be empty");
@@ -64,8 +64,8 @@ if (!empty($country)) {
 
 
 
-if (isset($email) and isset($password) and isset($address) and isset($phone) and isset($city) and isset($country)) {
-        $sql="UPDATE users SET password='$password',email='$email',address='$address',phone_number='$phone',city='$city',country='$country' WHERE id_user=$id";
+if (isset($email) and isset($password) and isset($address) and isset($phone) and isset($city) and isset($firstName) and isset($lastName)) {
+        $sql="UPDATE users SET password='$password',email='$email',address='$address',phone='$phone',city='$city',firstName='$firstName',lastName='$lastName' WHERE userID=$id";
         $query=mysqli_query($connection,$sql);
         if ($query) {
             $json["successReg"]="Successfull update!";

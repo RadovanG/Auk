@@ -2,32 +2,31 @@
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
 
-            <div class="container-fluid">
-                <div id="navigation">
+            <div id="navigation">
                     <ul class="top-level">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Item1</a></li>
+                        <li><a href="#">Item2</a></li>
+                        <li><a href="#">Item3</a></li>
                         <li>
-                            <a href="#">Portfolio</a>
+                            <a href="#">Item4</a>
                             <ul class="sub-level">
-                                <li><a href="#">Logo Design</a></li>
-                                <li><a href="#">Mobile Apps</a></li>
+                                <li><a href="#">Item4a</a></li>
+                                <li><a href="#">Item4b</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Services</a>
+                            <a href="#">Item5</a>
                             <ul class="sub-level">
-                                <li><a href="#">Web Development</a>
+                                <li><a href="#">Item5a</a>
                                 </li>
-                                <li><a href="#">Logo Design</a></li>
+                                <li><a href="#">Item5b</a></li>
                                 <li>
-                                    <a href="#">Web Hosting</a>
+                                    <a href="#">Item5c</a>
                                     <ul class="sub-level">
-                                        <li><a href="#">Linux</a></li>
-                                        <li><a href="#">Windows</a></li>
+                                        <li><a href="#">Wut</a></li>
+                                        <li><a href="#">Wut2</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -37,16 +36,14 @@
                     </ul>
                 </div>
 
-
+        </div>
+                <div class="row">
+                    <div class="col-md-10">
+                        <h1> Gde je ovaj </h1>
 
             </div>
 
         </div>
 
-    </div>
-
-
-
-</div>
 
 
