@@ -11,7 +11,6 @@ $(document).ready(function () {
     var errorCity=true;
     var errorPhone=true;
     var errorEmail=true;
-    var errorBirthDay=true;
 
 
     $("#firstName").keyup(function () {
@@ -80,6 +79,7 @@ $(document).ready(function () {
         }
 
     });
+
 
     $("#address").keyup(function () {
         var address=$("#address").val().trim();
@@ -157,28 +157,31 @@ $(document).ready(function () {
         if (errorCity) {
             $('#errorCity').css("display", "block");
         }
-        if (errorCountry) {
+        if (errorFirstName) {
+            $('#errorCountry').css("display", "block");
+        }
+        if (errorLastName) {
             $('#errorCountry').css("display", "block");
         }
 
 
 
-
-        if (!errorEmail && !errorUsername && !errorPassword && !errorPhone &&!errorCity && !errorCountry) {
+        if (!errorEmail && !errorUsername && !errorPassword && !errorPhone &&!errorCity && !errorLastName && !errorFirstName) {
             var username = $('#username').val().trim();
             var password=$('#password').val().trim();
             var email = $('#email').val().trim();;
             var address=$('#address').val().trim();
             var phone=$('#phone').val().trim();
             var city=$('#city').val().trim();
-            var country=$('#country').val().trim();
+            var lastName=$('#lastName').val().trim();
+            var firstName=$('#firstName').val().trim();
 
 
             $.ajax({
                 type: "POST",
                 url: "register-db.php",
                 cache: false,
-                data:  { username : username, password : password,email: email ,address : address,phone : phone,city : city,country:country },
+                data:  { username : username, password : password,email: email ,address : address,phone : phone,city : city,lastName : lastName,firstName : firstName  },
                 success: successFnc,
                 error: errorFnc,
                 dataType: "json"
