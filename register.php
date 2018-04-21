@@ -26,7 +26,6 @@
                     <label for="firstName" class="cols-sm-2 control-label">First Name</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
                             <input type="text" class="form-control" name="firstName" id="firstName"  placeholder="Enter your First Name"/>
                         </div>
                     </div>
@@ -37,7 +36,6 @@
                     <label for="lastName" class="cols-sm-2 control-label">Last Name</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
                             <input type="text" class="form-control" name="lastName" id="lastName"  placeholder="Enter your Last name"/>
                         </div>
                     </div>
@@ -49,7 +47,6 @@
                     <label for="username" class="cols-sm-2 control-label">Username</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
                             <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
                         </div>
                     </div>
@@ -60,7 +57,6 @@
                     <label for="password" class="cols-sm-2 control-label">Password</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
                             <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
                         </div>
                     </div>
@@ -70,7 +66,6 @@
                     <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
                             <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
                         </div>
                     </div>
@@ -80,7 +75,6 @@
                     <label for="address" class="cols-sm-2 control-label">Your address</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
                             <input type="text" class="form-control" name="address" id="address"  placeholder="Enter your Address"/>
                         </div>
                     </div>
@@ -91,7 +85,6 @@
                     <label for="city" class="cols-sm-2 control-label">Your city</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
                             <input type="text" class="form-control" name="city" id="city"  placeholder="Enter your City"/>
                         </div>
                     </div>
@@ -102,7 +95,6 @@
                     <label for="phone" class="cols-sm-2 control-label">Phone number</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
                             <input type="text" class="form-control" name="phone" id="phone"  placeholder="Enter your number"/>
                         </div>
                     </div>
@@ -113,7 +105,6 @@
                     <label for="email" class="cols-sm-2 control-label">Your Email</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
                             <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
                         </div>
                     </div>
@@ -124,7 +115,6 @@
                     <label for="userBirthday" class="cols-sm-2 control-label">Your Birthday</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
                             <input type="date" class="form-control" name="userBirthday" id="userBirthday"  />
                         </div>
                     </div>
