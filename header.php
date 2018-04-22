@@ -13,7 +13,7 @@ include('html.php');
                 <a class="nav-link" href="#">Auction <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">My bids</a>
+                <a class="nav-link" href="form.php">Post</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="#">My Account </a>
