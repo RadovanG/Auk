@@ -31,32 +31,41 @@ include('db_config.php');
         </div>
         <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
-                <div class="col-2 prob ">
-                    <img src="images/photo.png" class="rounded float-left" width="129-"  alt="opis slike">
-                </div>
-                <div class="col-3 proizvod">
-                    <a href="link_od_proizvoda"> Proizvod </a>
-                    <p class="text-muted"> Opis.........</p>
-                    <br/>
-                    <br/>
+                <?php
+                $sql = "SELECT * FROM articles";
+                $result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+                $record = mysqli_fetch_array($result);
+                $thisID=$record["articleID"];
 
-                    <p class="text-muted"> Cena: </p>
-                    <p style="" </p>
+                while ($record = mysqli_fetch_array($result)) {
+                    echo "<div class=\"row\">";
+                    echo "<div class=\"col-2\">";
+                    echo "<img src=\"".$record["articlePhoto"]."\" class=\"rounded float-left\" width=\"100%\"  alt=\"opis slike\">";
+                    echo "</div>";
+                    echo "<div class=\"col-3\">";
+                    echo "<a href=\"link_od_proizvoda\"> ".$record["articleUserDes"] ." </a>";
+                    echo "<p class=\"text-muted\"> Opis: ".$record["articleUserDes"] ."</p>";
+                    echo "<br/>";
+                    echo " <br/>";
+
+                    echo "<p class=\"text-muted\"> Trenutni bid:  ". $record["firstBidPrice"]."</p>";
+
+
+
+                    echo "<p class=\"text-muted\"> Cena kupi odmah:  ". $record["articleCostBuyNow"]."</p>";
+
+
+                    echo "  <p style=\"\" </p>";
+                    echo "</div>";
+                    echo "</div>";
+
+                }
+
+                ?>
                 </div>
                 <br/>
 
-                <div class="col-2 prob">
-                    <img src="images/photo.png" class="rounded float-left" width="100%"  alt="opis slike">
-                </div>
-                <div class="col-3 proizvod">
-                    <a href="link_od_proizvoda "> Proizvod </a>
-                    <p class="text-muted"> Opis........</p>
-                    <br/>
-                    <br/>
 
-                    <p class="text-muted"> Cena: </p>
-
-                </div>
         </div>
     </div>
 </div>
