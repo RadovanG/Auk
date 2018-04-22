@@ -8,7 +8,6 @@
 <html>
 <head>
     <title>upis</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/login_css.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -26,14 +25,14 @@ include('header.php');?>
                     <?php
                     while ($row = mysqli_fetch_array($result))
                     {
-                        echo "<li><a href='".$row['categoryID']."'>".$row['categoryName']."</a></li>";
+                        echo "<li><a style=\"color:#fff;\" href='".$row['categoryID']."'>".$row['categoryName']."</a></li>";
 
                         $sql1="SELECT * FROM subcategory WHERE categoryID = '".$row['categoryID']."'";
                         $result1 = $connection->query($sql1);
                         echo "<ul class='subcategory'>";
                         while ($row = mysqli_fetch_array($result1))
                         {
-                            echo "<li><a href='".$row['subcategoryID']."'>".$row['subcategoryName']."</a></li>";
+                            echo "<li><a style=\"color:#fff;\" href='".$row['subcategoryID']."'>".$row['subcategoryName']."</a></li>";
                         }
                         echo "</ul></li>";
                     }
