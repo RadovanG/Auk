@@ -116,17 +116,19 @@ VALUES ($articleID,$userIDins,$bid)";
                     }
                     echo "<p class=\"text-muted\"> Trenutni bid:  ".$price."</p>";
 
-                  ?>  <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-<input type="text" name="bid"/>
-<input type="hidden" name="articleID" value="<?php echo $thisID;?>">
+                  ?>  <?php
+                    if (isset($_SESSION['username'])) {
+                        ?>
+                        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                        <input type="text" name="bid"/>
+                        <input type="hidden" name="articleID" value="<?php echo $thisID; ?>">
 
-<input type="hidden" name="firstBidPrice" value="<?php echo $firstBidPrice;?>">
+                        <input type="hidden" name="firstBidPrice" value="<?php echo $firstBidPrice; ?>">
 
                         <input type="submit" name="placeabid" value="bid">
-</form>
-
-<?php
-
+                        </form>
+                        <?php
+                    };
 
                     echo "  <p style=\"\" </p>";
                     echo "</div>";
