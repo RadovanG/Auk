@@ -2,7 +2,7 @@
 include('html.php');
 ?>
 <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a class="navbar-brand" href="#">Your Auction House</a>
+    <a class="navbar-brand" href="index.php">Your Auction House</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,13 +10,17 @@ include('html.php');
 
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item ">
-                <a class="nav-link" href="#">Auction <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="ispis.php">Auction <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="form.php">Post</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#">My Account </a>
+            <li class="nav-item"><?php
+                if (isset($_SESSION['username']))
+                echo '<a class="nav-link " href="logout.php">Log out</a>';
+                else
+                    echo '<a class="nav-link " href="login.php">Log in </a>';
+                ?>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
