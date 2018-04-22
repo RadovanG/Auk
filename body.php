@@ -4,7 +4,7 @@ include('db_config.php');
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12"">
             <?php
             $sql = "SELECT * FROM category";
             $result = $connection->query($sql);
@@ -29,7 +29,7 @@ include('db_config.php');
                 </ul>
             </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
                 <div class="col-2 prob ">
                     <img src="images/photo.png" class="rounded float-left" width="129-"  alt="opis slike">
