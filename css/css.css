@@ -20,9 +20,7 @@ ul.subcategory {
     text-align: left;
     font-size: larger;
 }
-a {
-    font-size: larger;
-}
+
 .proizvod {
     background-color:#00ff11;
     border: dashed;
@@ -30,8 +28,23 @@ a {
 
 }
 .prob {
-    background-color:#00ff11;
+    background-color:#00ff12;
     margin-left: 20px;
     border: dashed;
     border-right: none;
+}
+
+.category li {
+    float: left;
+    list-style: none;
+    text-align: center;
+    background-color:#ff0000;
+    margin:2px;
+    width: 150px;
+    line-height: 34px;
+    border-radius: 15px;
+}
+ul #category{
+    border: 2px solid black
+
 }

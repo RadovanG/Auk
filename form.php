@@ -51,13 +51,10 @@ include_once('db_config.php');
     <div>Donation:</div>    <div><input type="radio" name="articleDonation" value="1" checked="checked">Yes
         <input type="radio"  name="articleDonation" value="9">No</div><br/>
 
-    <div>
-        If yes<br/>
-        Donate to ...
-    </div>
+
     <input name="Send your product!" type="submit" value="Send">
 </form>
 
-?>
+
 </body>
 </html>

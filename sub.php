@@ -1,20 +1,45 @@
 <?php
-$q = intval($_GET['q']);
-
-$con = mysqli_connect('localhost','root','','bizkodaukcije');
-if (!$con) {
-    die('Could not connect: ' . mysqli_error($con));
-}
-
-mysqli_select_db($con,"ajax_demo");
-$sql="SELECT * FROM subcategory WHERE categoryID = '".$q."'";
-$result = mysqli_query($con,$sql);
-if($q!="none")
-{
-    echo "<select name=\"subcategory\">";
-    while ($row = mysqli_fetch_array($result)) {
-        echo "<option value='" . $row['subcategoryID'] . "'>" . $row['subcategoryName'] . "</option>";
-    }
-    echo "</select>";
-};
+include_once("db_config.php");
 ?>
+<?php
+$category = array();
+
+$sql = "SELECT categoryID,categoryName
+FROM category
+ORDER BY categoryName ASC";
+
+$result= mysqli_query($connection,$sql) or die(mysqli_error($connection));
+if (mysqli_num_rows($result)>0)
+{
+    while ($record = mysqli_fetch_array($result))
+    {
+        $category[$record['categoryID']] = $record['categoryName'];
+        var_dump($category);
+    }
+}
+var_dump($category);
+$sub_category = array();
+foreach ($category as $k=>$v)
+{
+    $sql = "SELECT subcategoryID, subcategoryName, categoryID
+			FROM subcategory
+			WHERE categoryID = '$k'";
+
+    $result= mysqli_query($connection,$sql) or die(mysqli_error($connection));
+
+    if (mysqli_num_rows($result)>0)
+    {
+        while ($record = mysqli_fetch_array($result))
+        {
+            $sub_category["$v"][] = $record['subcategoryName'];
+            var_dump($sub_category);
+        }
+    }
+}
+?>
+<script type="text/javascript">
+    <?php
+
+</script>
+</body>
+</html>
